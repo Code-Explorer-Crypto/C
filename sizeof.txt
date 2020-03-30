@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+	int a = 0;
+	char b = 0;
+	long c = 0;
+	long long d = 0;
+	float e = 0;
+	double f = 0;
+	printf("int      %d 个字节\n", sizeof(a));
+	printf("char     %d 个字节\n", sizeof(b));
+	printf("long     %d 个字节\n", sizeof(c));
+	printf("longlong %d 个字节\n", sizeof(d));
+	printf("float    %d 个字节\n", sizeof(e));
+	printf("double   %d 个字节\n", sizeof(f));
+	system("pause");
+}
