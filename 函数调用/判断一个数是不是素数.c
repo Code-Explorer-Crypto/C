@@ -33,26 +33,26 @@
 
 
 
-#define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
-int IsPrime(int a) {
-	int b = 2;
-	for (b = 2;b < a;b++) {
-		if (a % b == 0) {
-			return 0;
-			break;
-		}
-	}
-	return 1;
-  }
-
-int main() {
-	int d = 0;
-	scanf("%d", &d);
-	int e = IsPrime(d);
-	if (e == 0) {
-		printf("不是素数");
-	}
-	else if(e == 1)
-		printf("是素数");
-}
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//int IsPrime(int a) {
+//	int b = 2;
+//	for (b = 2;b < a;b++) {
+//		if (a % b == 0) {
+//			return 0;
+//			break;
+//		}
+//	}
+//	return 1;
+//  }
+//
+//int main() {
+//	int d = 0;
+//	scanf("%d", &d);
+//	int e = IsPrime(d);
+//	if (e == 0) {
+//		printf("不是素数");
+//	}
+//	else if(e == 1)
+//		printf("是素数");
+//}
