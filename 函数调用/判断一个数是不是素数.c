@@ -1,6 +1,6 @@
 //素数:只能被1和自身整除的数
-#define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
 //int su( int a, int b) {
 //	if (a % b != 0) {
 //		return 1;
