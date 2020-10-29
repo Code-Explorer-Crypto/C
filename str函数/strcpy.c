@@ -13,8 +13,8 @@
 //}
 //
 //int main() {
-//	char arr1[] = {'0','0', '0', '0', '0', '0','0'};
-//	char arr2[] = "abcde";
+//	char arr1[] = {'0','0', '0', '0', '0','0'};
+//	char arr2[] = "abcde\0f";
 //	my_strcpy(arr1, arr2);
 //	printf("%s", arr1);
 //}
