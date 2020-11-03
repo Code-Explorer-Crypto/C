@@ -1,20 +1,18 @@
-//#define	 _CRT_SECURE_NO_WARNINGS
 //#include <stdio.h>
 //#include <string.h>
+//char my_strcmp(char* arr1, char* arr2) {
+//	while (*arr1 == *arr2) {
+//		if (*arr1 = '\0') {
+//			return 0;
+//		}
+//		arr1++;
+//		arr2++;
+//	}
+//		return *arr1 - *arr2;
+//}
+//
 //int main() {
-//	char arr1[] = { "xxxxxxxxxxxxxxxx" };
-//	char arr2[] =  "abcde" ;
-//	strcpy(arr1,arr2);
-//	printf("%s", arr1);
+//	char arr1[] = "abcd";
+//	char arr2[] = "add";
+//	printf("%d", my_strcmp(arr1, arr2));
 //  }
-
-//#define _CRT_SECURE_NO_WARNINGS
-//#include <stdio.h>
-//#include <string.h>
-//int main() {
-//	char arr1[] = { "xxxxxxxxxxxxxxxx" };
-//	char arr2[5] = { "abcde" };
-//	strcpy(arr1, arr2);
-//	printf("%s", arr1);
-//   }
-
