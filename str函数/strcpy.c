@@ -49,3 +49,22 @@
 //	strncpy(arr1, arr2,5);
 //	printf("%s", arr1);
 //  }
+//
+//char* my_strcpy(char* des, char* src) {
+//	assert(des != NULL);
+//	assert(src != NULL);
+//	char* ret = des;
+//	while (*des = *src) {
+//		des++;
+//		src++;
+//	}
+//	return ret;
+//}
+//
+//int main() {
+//	char arr1[] = "abcdef";
+//	char arr2[] = "iop";
+//	printf("%s\n", my_strcpy(arr1, arr2));
+//	printf("%s", strcpy(arr1, arr2));
+//}
+//
