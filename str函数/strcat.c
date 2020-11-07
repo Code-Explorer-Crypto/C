@@ -1,14 +1,14 @@
 //#include <stdio.h>
 //#include <string.h>
 //#include <assert.h>
-//char my_strcat(char* arr1, char* arr2) {
-//	assert(arr1 != NULL);
-//	assert(arr2 != NULL);
-//	char* ret = arr1;
-//	while (*arr1) {
-//		arr1++;
+//char* my_strcat(char* des, const char* src) {
+//	assert(des != NULL);
+//	assert(src != NULL);
+//	char* ret = des;
+//	while (*des) {
+//		des++;
 //	}
-//	while (*arr1++ = *arr2++) {
+//	while (*des++ = *src++) {
 //	}
 //	return ret;
 //}
