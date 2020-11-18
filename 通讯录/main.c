@@ -15,17 +15,21 @@ enum {
 	SEARCH,
 	REPEAR,
 	SHOW,
+	CLEAR,
 	SORT
 };
 
 int main() {
 	menu();
+	Data con;
+	Init(&con);
 	int input = 0;
 	printf("«Î—°‘Ò:");
 	scanf("%d", &input);
 	switch (input) {
 	case ADD:
-		add(&data);
+		capacity(&con);
+		add(&con);
 		break;
 	case DEL:
 		break;
@@ -35,11 +39,12 @@ int main() {
 		break;
 	case SHOW:	
 		break;
+	case CLEAR:
+		break;
 	case SORT:	
 		break;
 	default:
 		printf(" ‰»Î”–ŒÛ");
 	}
-    
 }
 
