@@ -34,3 +34,15 @@ typedef struct PeoInfo{
 
 Info data[1000];
 
+typedef struct Data {
+	int cap;
+	Info* data[3];
+}Data;
+
+void menu();
+
+void add(Data* s);
+
+Init(Data* s);
+
+void capacity(Data* s);
