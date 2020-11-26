@@ -24,22 +24,30 @@ int main() {
 	Data con;
 	Init(&con);
 	int input = 0;
+	char name[] = { 0 };
 	printf("请选择:");
 	scanf("%d", &input);
 	switch (input) {
 	case ADD:
-		capacity(&con);
+		con = capacity(&con);
 		add(&con);
 		break;
 	case DEL:
+		del(&con);
 		break;
 	case SEARCH:
+		scanf("%s", &name);
+		printf("要查找的人序号为%d",find(&con,name));
 		break;
 	case REPEAR:
+		scanf("%s", &name);
+		repear(&con, find(&con, name));
 		break;
-	case SHOW:	
+	case SHOW:
+		show(&con);
 		break;
 	case CLEAR:
+		/*clear(&con);*/
 		break;
 	case SORT:	
 		break;
