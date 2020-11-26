@@ -39,10 +39,26 @@ typedef struct Data {
 	Info* data[3];
 }Data;
 
+//菜单
 void menu();
 
+//添加数据
 void add(Data* s);
 
+//初始化
 Init(Data* s);
 
+//扩容
 void capacity(Data* s);
+
+//删除
+void del(Data* s);
+
+//查找
+int find(Data* s, char name[]);
+
+//修改数据
+void repear(Data* s, int cap);
+
+//show
+void show(Data* s);
