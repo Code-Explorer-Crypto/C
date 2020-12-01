@@ -28,3 +28,21 @@
 //	printf("%s", ret);
 //	return 0;
 //  }
+
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//#include <string.h>
+//
+//int main()
+//{
+//    char str[] = "This  simple is a simple string";
+//    char* pch;
+//    pch = strstr(str, "simple");
+//    puts(pch);
+//    pch = strstr(pch, "simple");
+//    puts(pch);
+//    if (pch != NULL)
+//        strncpy(pch, "sample", 6);
+//    puts(str);
+//    return 0;
+//}
