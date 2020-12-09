@@ -1,19 +1,13 @@
 #include "seqList.h"
 #include <stdlib.h>
-void initseqList(seqList* sl) {
-	if(sl = NULL)
+#include <string.h>
+#include <stdio.h>
+void InitseqList(SeqList* sl) {
+	if(sl == NULL)
 		return;
 	sl->data = NULL;
 	sl->size = 0;
 	sl->capacity = 0;
-}
-
-//增删查改
-//尾插
-void pushBack(seqList* sl, SQLDataType val) {
-	if (sl == NULL)
-		return;
-	
 }
 
 //容量检查
@@ -21,25 +15,125 @@ void pushBack(seqList* sl, SQLDataType val) {
 	//  2.拷贝原有数据
 	//  3.释放原有空间
 	//  4.更新容量
-	void seqListcapacity(seqList* sl){
-		//空间已满,扩容
-		if (sl->size == sl->capacity) {
-			//1.开新的空间
-			int newcapacity =  sl->capacity == 0 ? 1 : 2 * sl->capacity;
-			SQLDataType* tmp = (SQLDataType*)malloc(newcapacity * sizeof(SQLDataType));
-			//2.拷贝
-			memcpy(tmp, sl->data, sl->size);
-			//3.释放原有空间
-			free(sl);
-			sl->data = tmp;
-			//4.更新容量
-			sl->capacity = newcapacity;
-		}
+void SeqListcapacity(SeqList* sl) {
+	//空间已满,扩容
+	if (sl->size == sl->capacity) {
+		//1.开新的空间
+		int newcapacity = sl->capacity == 0 ? 1 : 2 * sl->capacity;
+		SQLDataType* tmp = (SQLDataType*)malloc(newcapacity * sizeof(SQLDataType));
+		//2.拷贝
+		memcpy(tmp, sl->data, sl->size);
+		//3.更新容量
+		sl->data = tmp;
+		sl->capacity = newcapacity;
 	}
-	////尾插
-	//sl->data[sl->size] = val;
-	//sl->size++;
+}
+
+//增删查改
+//尾插
+void PushBack(SeqList* sl, SQLDataType val) {
+	if (sl == NULL)
+		return;
+	SeqListcapacity(sl);
+	//尾插
+	sl->data[sl->size] = val;
+	sl->size++;
+}
+
+//头插
+void PushFront(SeqList* sl, SQLDataType val){
+	SeqListcapacity(sl);
+	for (int i = sl->size;i > 0;i--) {
+		sl->data[i] = sl->data[i - 1];
+	}
+	sl->data[0] = val;
+	sl->size++;
+}
+
+//任意位置插入元素
+void Insert(SeqList* sl, int pos, SQLDataType val) {
+	int a = 0;
+	a = sl->data[pos];
+	sl->data[pos] = val;
+	sl->size++;
+	for (int i = sl->size;i > sl->data[pos + 1];i--) {
+		sl->data[i] = sl->data[i - 1];
+	}
+	sl->data[pos + 1] = a;
+}
+
+//尾删
+void PopBack(SeqList* sl) {
+	if (sl == NULL) 
+		return;	
+	sl->size--;
+}
+
+//头删
+void PopFront(SeqList* sl) {
+	for (int i = 1;i < sl->size;i++) {
+		sl->data[i - 1] = sl->data[i];
+	}
+	sl->size--;
+}
+
+//删除任意位置的数据
+void Erase(SeqList* sl, int pos) {
+	for (int i = pos + 1;i < sl->size;i++) {
+		sl->data[i - 1] = sl->data[i];
+	}
+	sl->size--;
+}
+
+//销毁顺序表
+void SeqListDestory(SeqList* sl) {
+	if (sl != NULL && sl->data != NULL) {
+		free(sl->data);
+	}
+}
 
 
-int main() {
+//打印
+void print(SeqList* sl) {
+	for (int i = 0;i < sl->size;i++) {
+		printf("%d", sl->data[i]);
+	}
+	printf("\n");
+}
+
+
+
+
+
+int main(){
+	SeqList sl;
+	//初始化顺序表
+	InitseqList(&sl);
+	//尾插
+	PushBack(&sl, 1);
+	//尾删
+	PopBack(&sl);
+	//尾插
+	PushBack(&sl, 2);
+	//打印
+	print(&sl);
+	//尾删
+	PopBack(&sl);
+	//打印
+	print(&sl);
+	//首插
+	PushFront(&sl, 5);
+	//打印
+	print(&sl);
+	/*PopFront(&sl);*/
+	//任意位置插入元素
+	Insert(&sl, 0, 7);
+	//打印
+	print(&sl);	
+	//删除任意位置的数据
+	Erase(&sl, 0);
+	//打印
+	print(&sl);
+	//销毁顺序表
+	SeqListDestory(&sl);
 }
