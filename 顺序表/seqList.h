@@ -42,3 +42,6 @@ void Erase(SeqList* sl, int pos);
 //¥Ú”°
 void print(SeqList* sl);
 
+//≤È’“
+int SeqListFind(SeqList* sl, SQLDataType val);
+
