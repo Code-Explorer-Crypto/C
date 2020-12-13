@@ -23,8 +23,10 @@ void SeqListcapacity(SeqList* sl) {
 		SQLDataType* tmp = (SQLDataType*)malloc(newcapacity * sizeof(SQLDataType));
 		//2.拷贝
 		memcpy(tmp, sl->data, sl->size);
-		//3.更新容量
+		//3.释放原有空间
+		free(sl->data);
 		sl->data = tmp;
+		//3.更新容量
 		sl->capacity = newcapacity;
 	}
 }
@@ -77,6 +79,18 @@ void PopFront(SeqList* sl) {
 	sl->size--;
 }
 
+//顺序表查找
+int SeqListFind(SeqList* sl, SQLDataType val) {
+	for (int i = 1;i <= sl->size;i++) {
+		if (sl->data[i-1] == val) {
+			printf("找到了,在第%d个",i);
+			return i;
+		}
+	}
+	printf("未找到");
+	return 1;
+}
+
 //删除任意位置的数据
 void Erase(SeqList* sl, int pos) {
 	for (int i = pos + 1;i < sl->size;i++) {
@@ -89,6 +103,7 @@ void Erase(SeqList* sl, int pos) {
 void SeqListDestory(SeqList* sl) {
 	if (sl != NULL && sl->data != NULL) {
 		free(sl->data);
+		sl->data = NULL;
 	}
 }
 
@@ -134,6 +149,8 @@ int main(){
 	Erase(&sl, 0);
 	//打印
 	print(&sl);
+	//查找
+	SeqListFind(&sl, 5);
 	//销毁顺序表
 	SeqListDestory(&sl);
 }
