@@ -34,7 +34,7 @@
 
 //已知数组nums,数组长度numsSize,要删除的数据val
 //要求删除数据val,并返回新的长数组度
-int removeElement(int* nums, int numsSize, int val) {
+//int removeElement(int* nums, int numsSize, int val) {
 
     // //整个数组遍历
     //  for(int i = 0;i < numsSize;i++){
@@ -46,11 +46,32 @@ int removeElement(int* nums, int numsSize, int val) {
     //     }
     //  }
     //  return numsSize;
-    int i = 0, idx = 0;
+ /*   int i = 0, idx = 0;
     for (;i < numsSize;i++) {
         if (nums[i] != val) {
             nums[idx++] = nums[i];
         }
     }
     return idx;
-}
+}*/
+
+//#include<stdio.h>
+//#include<stdlib.h>
+//int main() {
+//    int i = 5;
+//    int numsize = 5;
+//    int* flag = (int*)malloc(numsize * i);
+//}
+
+
+////已知数组nums,要删除的值val,数组长度numsSize
+////不需要考虑超出数组新长度后面的元素的情况下,返回新数组的长度
+//int removeElement(int* nums, int numsSize, int val) {
+//    int j = 0;
+//    for (int i = 0;i < numsSize;i++) {
+//        if (nums[i] != val) {
+//            nums[j++] = nums[i];
+//        }
+//    }
+//    return j;
+//}
