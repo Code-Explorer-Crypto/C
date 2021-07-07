@@ -92,6 +92,7 @@
 #define Tel_Max 1000
 #define Add_Max 1000
 
+]
 typedef struct PeoInfo {
 	char name[Name_Max];
 	char sex[Sex_Max];
