@@ -3,7 +3,7 @@
 int main() {
 	int nums[5] = { 0 };
 	int* nums1 = (int*)malloc(5);
-	nums1 = (int*)realloc(nums, 10);
+	nums1 = (int*)realloc(nums1, 10);
 	printf("%d", sizeof(nums));
 	return 0;
  }
